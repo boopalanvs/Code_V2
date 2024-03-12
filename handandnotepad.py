@@ -21,10 +21,11 @@ print(classNames)
 
 # Initialize the webcam
 cap = cv2.VideoCapture(0)
-url='https://www.google.com'
+
 while True:
     # Read each frame from the webcam
     _, frame = cap.read()
+
 
     x, y, c = frame.shape
 
@@ -61,26 +62,18 @@ while True:
             
             # Check if the gesture is "peace" and open Notepad
             if className == 'peace':
-                os.system(f'start {url}')
-                break
-            elif className =='thumbs down':
-                os.system('notepad.exe')
-                break
-            elif className =='thumbs up':
                 os.system('microsoftedge.exe')
                 break
-            elif className =='rock':
-                os.system('start winword.exe')
+            elif className =='thumbs up':
+                os.system('notepad.exe')
                 break
-            elif className =='call me':
-                os.system('calculator.exe')
+            elif className =='thumbs down':
+                os.system('calc.exe')
                 break
-            elif className =='fist':
-                os.system('start excel.exe')
-                break
-            elif className =='live long':
-                os.system('settings.exe')
-                break
+            else:
+                print(" ")
+           
+            
 
 
     # Show the predicted gesture on the frame
